@@ -1,0 +1,7 @@
+{
+  "name": "Albaranes",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

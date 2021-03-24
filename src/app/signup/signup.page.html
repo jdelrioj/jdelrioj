@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="tertiary">
+        <ion-back-button  slot="icon-only"   name="arrow-back" defaultHref="/login"></ion-back-button>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">Log in</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Crea tu propia<br />Cuenta</h1>
+
+  <form id="form">
+    <app-input placeholder="Nombre"></app-input>
+    <app-input placeholder="Email"></app-input>
+    <app-input type="password" placeholder="Password"></app-input>
+    <ion-button color="tertiary" expand="block" shape="round">Registrar</ion-button>
+  </form>
+
+  <p>Registrate para poder acceder a los<br /> diferentes albaranes. </p>
+</ion-content>

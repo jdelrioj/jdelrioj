@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="goProfile()">
+        <ion-icon id="icon" name="person-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>T-sign</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="menu">
+  <ion-card id="card1" style="margin-top: 20px;">
+    <ion-item id="item1">
+      <!--Icon-->
+      <ion-icon name="document-text-outline" id="icon"></ion-icon>
+      <ion-label id="label">Documentos pendientes</ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card id="card2"> 
+    <ion-item id="item2">
+      <!--Icon-->
+      <ion-icon name="checkbox-outline" id="icon"></ion-icon>
+      <ion-label id="label">Documentos firmados</ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card id="card1" (click)="goProfile()">
+    <ion-item id="item1">
+      <!--Icon-->
+      <ion-icon id="icon" name="person-circle-outline"></ion-icon>
+      <ion-label id="label">Mis datos de Usuario</ion-label>
+    </ion-item>
+  </ion-card>
+  <ion-card id="card2">
+    <ion-item id="item2">
+      <!--Icon-->
+      <ion-icon id="icon" name="clipboard-outline"></ion-icon>
+      <ion-label id="label">Limpiar documentos</ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-button id="butsync" class="btn-block" expand="block">Sincronizar</ion-button>
+</ion-content>

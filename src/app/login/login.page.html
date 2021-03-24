@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  <!--
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-buttons slot="end">
+      
+    </ion-buttons>
+  </ion-toolbar>-->
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div class="align-items-center d-flex h-100">
+      <div class="card-body" [fullscreen]="true">
+        <div id="header" class="text-center text-lg-left">
+          <!--<a href="index.php" class="logo-dark">-->
+            <span class="logo-lg">
+              <span style="color: #555;font-weight: bold;font-size: 65px">T</span>
+              <span style="color: #555;font-weight: bold;font-size: 65px"> - </span>
+              <span style="color: #555;font-weight: bold;font-size: 65px">Sign</span>
+            </span>
+          <!--</a>-->
+          <!--<a class="logo-light">
+            <span class="logo-lg">
+              <span style="color: #888;font-weight: bold;font-size: 65px">T</span>
+              <span style="color: #888;font-weight: bold;font-size: 65px">-</span>
+              <span style="color: #888;font-weight: bold;font-size: 65px">Sign</span>
+            </span>
+          </a>-->
+          <hr style="width: 90%; color: grey; height: 0.5px; background-color:grey;"/>
+        </div>
+
+        <div class="text-left text-lg-left" style="padding-left: 30px;">
+          <h4 class="text-dark mt-0">Login</h4>
+          <ion-text class="text-muted mb-4" style="text-size-adjust: 12px;">
+            Introduce tu dirección de correo electrónico y tu contraseña para acceder a la cuenta.
+          </ion-text>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)" id="form" style="margin-top: 20px;">
+
+          <ion-label class="text-dark mt-0">Email</ion-label>
+          <ion-input class="form-control" placeholder="Email" formControlName="username" style="margin-bottom: 10px;"></ion-input>
+
+          <ion-label class="text-dark mt-0">Contraseña</ion-label>
+          <ion-input class="form-control" placeholder="Contraseña" type="password" formControlName="password"></ion-input>
+
+          <ion-button class="btn-block" expand="block" color="tertiary" type="submit" [disabled]="!this.loginForm.valid" style="margin-top: 20px;">
+            <ion-icon name="log-in-outline"></ion-icon>
+            Entrar
+          </ion-button>
+        </form>
+
+    </div>
+  </div>
+
+
+  <!--
+  <form id="form">
+    <app-input placeholder="Email" type="text" ></app-input>
+    <app-input type="password" placeholder="Password"  ></app-input>
+    <ion-button color="tertiary" expand="block" shape="round">Login</ion-button>
+  </form>
+-->
+</ion-content>

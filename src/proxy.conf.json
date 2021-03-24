@@ -1,0 +1,12 @@
+{
+    "/api/*":{
+        "target": "https://singnote.tandemsm.com",
+        "secure": true,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite":{"^/api": "https://singnote.tandemsm.com/api"}
+        
+    }
+}
+
+

@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Datos del albarán
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon name="close" slot="start"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h4>Cabecera albarán</h4>
+  <form [formGroup]="signatureform">
+    <ion-item>
+      <ion-label>Código Empresa: </ion-label>
+      <ion-input formControlName="CodigoEmpresa" readonly="readonly"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ejercicio albarán: </ion-label>
+      <ion-input formControlName="EjercicioAlbaran" readonly="readonly"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Serie albarán: </ion-label>
+      <ion-input formControlName="SerieAlbaran" readonly="readonly"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nº Albarán: </ion-label>
+      <ion-input formControlName="NumeroAlbaran" readonly="readonly"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha: </ion-label>
+      <ion-input formControlName="FechaAlbaran" readonly="readonly"></ion-input>
+    </ion-item>
+  </form>
+
+  <br><br>
+
+  <h4>Linea albarán</h4>
+  <ion-list>
+    <ion-label>
+    </ion-label>
+    <ion-item-sliding *ngFor="let lineasalbaran of lineasalbaranes">
+      <ion-item>
+        <ion-label>
+          <p>Cód Artículo: {{ lineasalbaran.CodigoArticulo }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>Descripción: {{ lineasalbaran.DescripcionArticulo }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>Descuento: {{ lineasalbaran.Descuento }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>Ejercicio: {{ lineasalbaran.EjercicioAlbaran }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>Número: {{ lineasalbaran.NumeroAlbaran }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>Orden: {{ lineasalbaran.Orden }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>Serie: {{ lineasalbaran.SerieAlbaran }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>Precio: {{ lineasalbaran.Precio }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>Unidades: {{ lineasalbaran.Unidades }}</p>
+        </ion-label>
+      </ion-item>
+
+    </ion-item-sliding>
+
+
+  </ion-list>
+
+  <br><br>
+
+  <h4>Formulario</h4>
+  <form [formGroup]="signatureform" (ngSubmit)="addSignature()">
+    <ion-item>
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellidos: </ion-label>
+      <ion-input type="text" formControlName="apellidos"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>DNI: </ion-label>
+      <ion-input formControlName="dni"></ion-input>
+    </ion-item>
+    <p id="fm">Firma:</p>
+    <ion-item>
+      <div id="signature-pad" class="signature-pad">
+        <signature-pad id="firma" [options]="signaturePadOptions">
+
+        </signature-pad>
+
+        <ion-buttons slot="start">
+          <ion-button id="limpiar" (click)="clear()" color="tertiary">Limpiar</ion-button>
+        <!--  <ion-button id="guardar" (click)="savePNG()" color="tertiary">Guardar</ion-button> -->
+        </ion-buttons>
+      </div>
+    </ion-item>
+    <ion-button id="enviar" shape="round" color="tertiary" fill="solid" type="submit" [disabled]="!this.signatureform.valid">Enviar
+    </ion-button>
+  </form>
+
+
+
+
+</ion-content>

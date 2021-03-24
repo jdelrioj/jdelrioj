@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      Albaranes
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="this.onLogout()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+
+  <ion-toolbar color="tertiary">
+    <ion-searchbar placeholder="Búsqueda por razón social..." inputmode="text" (ionInput)="filterList($event)">
+    </ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let albaran of albaranes">
+      <ion-item>
+
+        <ion-label>
+          Razón social:
+          <p> {{ albaran.RazonSocial }}</p>
+
+        </ion-label>
+
+        <ion-buttons slot="end">
+          <ion-button slot="end" (click)="presentModal2(albaran)">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+      </ion-item>
+
+    </ion-item-sliding>
+
+
+  </ion-list>
+
+
+</ion-content>
