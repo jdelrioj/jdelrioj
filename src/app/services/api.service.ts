@@ -16,7 +16,7 @@ import { publishFacade } from '@angular/compiler';
 
 export class ApiService{
 
-  private datosrecibidostemp: Logindata[];
+  private datosrecibidostemp: Logindata;
   
   public user: User;
   private api = 'https://singnote.tandemsm.com';
@@ -101,7 +101,7 @@ export class ApiService{
     return this.http.get<any>(this.api+`/api/loginapp/${usuario}/${contraseña}`);
   }
 
-  setDatosrecibidos(valor: Logindata[]){
+  setDatosrecibidos(valor: Logindata){
     this.datosrecibidostemp = valor;
   }
 

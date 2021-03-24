@@ -18,8 +18,9 @@ export class LoginPage implements OnInit {
   user: User
   public loginForm: FormGroup;
   md5 = new Md5();
-  datosrecibidos: Logindata[] = [];
+  dataR: Logindata;
   constructor(private svc: ApiService, private router: Router, private formBuilder: FormBuilder, private utilities:UtilitiesService) {
+
   }
 
 
@@ -38,7 +39,9 @@ export class LoginPage implements OnInit {
     userdata = {
       email: this.loginForm.get('username').value,
       password: this.loginForm.get('password').value,
+      empresa:''
     }
+    this.svc.user=userdata;
     try {
       userdata.password = (Md5.hashStr(userdata.password) as string);
       //console.log('email: ' + userdata.email);
@@ -48,9 +51,14 @@ export class LoginPage implements OnInit {
         .subscribe(datosrecibidos => {
           //console.log(datosrecibidos)
           if(datosrecibidos.Token!=null){
-          this.datosrecibidos = datosrecibidos;
+          this.dataR = datosrecibidos;
+          console.log("datosrecibidos "+datosrecibidos.empresa)
+          console.log("this.datosrecibidos"+this.dataR.NombreEmpresa)
           //console.log(datosrecibidos.Token);
-          this.svc.setDatosrecibidos(datosrecibidos);
+
+          userdata.empresa = this.dataR.NombreEmpresa;
+
+          this.svc.setDatosrecibidos(this.dataR);
 
           this.router.navigate(['/mainmenu']);
           }else{
@@ -61,6 +69,7 @@ export class LoginPage implements OnInit {
 
       if (userdata) {
         this.svc.saveSession(userdata);
+        console.log("userdata"+userdata.empresa)
       }else{
 
       }

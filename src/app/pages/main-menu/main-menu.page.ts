@@ -11,7 +11,9 @@ import { ProfilePage } from '../profile/profile.page';
 })
 export class MainMenuPage implements OnInit {
 
-  constructor(private router:Router, private modalcontroller:ModalController, private api:ApiService) { }
+  constructor(private router:Router, private modalcontroller:ModalController, private api:ApiService) {
+    //console.log(this.api.user)
+   }
 
   ngOnInit() {
   }

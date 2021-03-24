@@ -17,7 +17,7 @@ export class Tab1Page implements OnInit {
   albaranes: Albaranes[] = [];
   albackup: Albaranes[] = [];
 
-  datosdellogeo: Logindata[];
+  datosdellogeo: Logindata;
 
   token:string;
   

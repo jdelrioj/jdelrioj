@@ -1,0 +1,63 @@
+ion-toolbar {
+    --background:  #f5f5f3;
+
+    ion-back-button{
+        color: black;
+        //font-size: 30px;
+    }
+}
+
+ion-content {
+    --background: #fff;
+
+    #logout {
+        margin-top: 35px;
+        height: 48px;
+        font-size: 20px;
+        text-transform: initial;
+        --background: #d8dafc;
+        color: #3b407f;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 50px;
+        box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.05);
+        --box-shadow: none;
+    }
+
+    #title {
+        color:grey;
+        font-size: 20px;
+        padding-top: 25px;
+        padding-left: 15px;
+        padding-bottom: 20px;
+    }
+
+    #card {
+        --background: #fff;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    #cardcontent {
+        font-size: 15px;
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    #icon {
+        padding-right: 5px;
+        font-size: 20px;
+        color:grey;
+    }
+
+    #label {
+        font-size: 20px;
+        color:grey;
+    }
+
+    /*
+    #labelempresa {
+        font-size: 15px;
+        color: grey;
+    }*/
+}

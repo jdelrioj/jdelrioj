@@ -3,12 +3,34 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>profile</ion-title>
+    <!--<ion-title>profile</ion-title>-->
   </ion-toolbar>
   <!--BackButton-->
 </ion-header>
 
 <ion-content>
+  <h1 id="title">Mi cuenta</h1>
+
+  <ion-card id="card">
+    <!--Imagen-->
+    <img class="ox-picture" [src]="">
+    <ion-label id="labelempresa">Empresa: {{user.empresa}}</ion-label>
+    <hr>
+    <ion-card-content id="cardcontent">
+      <ion-icon name="at-outline" id="icon"></ion-icon>
+      <ion-label id="label">Email: {{user.email}}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content id="cardcontent">
+      <ion-icon name="call-outline" id="icon"></ion-icon>
+      <ion-label id="label">Teléfono: </ion-label>
+    </ion-card-content>
+
+    <ion-card-content id="cardcontent">
+      <ion-icon name="people-outline" id="icon"></ion-icon>
+      <ion-label id="label">Rol: </ion-label>
+    </ion-card-content>
+  </ion-card>
   <!--
     Mi Usuario:
 
@@ -16,5 +38,5 @@
     Empresa
     Rol
   -->
-  <ion-button (click)="logOut()">Cerrar Sesión</ion-button>
+  <ion-button (click)="logOut()" id="logout" class="btn-block" expand="block">Cerrar Sesión</ion-button>
 </ion-content>
